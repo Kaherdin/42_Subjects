@@ -6,13 +6,13 @@
 /*   By: aborst <aborst@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/10 04:18:32 by maparmar          #+#    #+#             */
-/*   Updated: 2021/09/22 21:18:41 by aborst           ###   ########.fr       */
+/*   Updated: 2021/09/22 22:18:46 by aborst           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int		i;
 
@@ -27,8 +27,8 @@ int		main(int ac, char **av)
 				i++;
 			else
 			{
-				write(1, "z", 1);
-				break;
+				write(1, "a", 1);
+				break ;
 			}
 		}
 		write(1, "\n", 1);

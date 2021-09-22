@@ -26,6 +26,10 @@ cp -r $folder sujets/$newfolder
 
 echo "Votre exercice est : $newfolder"
 echo $newfolder > exercice.txt
+
+
+
+
 #echo "Il se trouve dans le dossier sujets"
 #echo "Vous devez faire un dossier rendu"
 

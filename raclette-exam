@@ -9,22 +9,28 @@ echo "folder is : rendu/$1"
 ./tools/build.sh
 #clear
 
-echo "\n\n$(date) : \n" >> RESULT_C$1.txt
-echo "+-+-+-+-+-+-+-+-+-+-+" >> RESULT_C$1.txt
-echo "|N|o|r|m|i|n|e|t|t|e|" >> RESULT_C$1.txt
-echo "+-+-+-+-+-+-+-+-+-+-+\n" >> RESULT_C$1.txt
+#echo "\n\n$(date) : \n" >> TRACE_$1.txt
+#echo "+-+-+-+-+-+-+-+-+-+-+" >> TRACE_$1.txt
+#echo "|N|o|r|m|i|n|e|t|t|e|" >> TRACE_$1.txt
+#echo "+-+-+-+-+-+-+-+-+-+-+\n" >> TRACE_$1.txt
 
-./tools/verify.sh >> RESULT_C$1.txt
+#./tools/verify.sh >> TRACE_$1.log
 
-echo "\n+-+-+-+-+-+-+-+-+-+-+" >> RESULT_C$1.txt
-echo "|M|o|u|l|i|n|e|t|t|e|" >> RESULT_C$1.txt
-echo "+-+-+-+-+-+-+-+-+-+-+\n" >> RESULT_C$1.txt
+echo "\n+-+-+-+-+-+-+-+-+-+-+" > TRACE_$1.log
+echo "|M|o|u|l|i|n|e|t|t|e|" >> TRACE_$1.log
+echo "+-+-+-+-+-+-+-+-+-+-+\n" >> TRACE_$1.log
 
-./tools/check_all.sh >> RESULT_C$1.txt
+./tools/check_all.sh >> TRACE_$1.log
 
-rm -rf tools/ user_c$1/ work/
+if grep -q ERROR TRACE_$1.log; then
+    echo Error
+else
+    echo Good
+fi
 
-#cp RESULT_C$1.txt ~/Desktop
+rm -rf tools/ work/
 
-echo "The results can be found in RESULT_C$1.txt"
-open ./RESULT_C$1.txt
+#cp TRACE_$1.txt ~/Desktop
+
+echo "The results can be found in TRACE_$1.log"
+open ./TRACE_$1.log
