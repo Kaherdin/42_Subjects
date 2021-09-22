@@ -7,18 +7,19 @@ clear
 echo "Le niveau est: $1"
 
 
-echo "\n+-+-+-+-+-+-+-+-+-+-+" > TRACE_$1.log
-echo "|M|o|u|l|i|n|e|t|t|e|" >> TRACE_$1.log
-echo "+-+-+-+-+-+-+-+-+-+-+\n" >> TRACE_$1.log
+echo "\n+-+-+-+-+-+-+-+-+-+-+" > TRACE.txt
+echo "|M|o|u|l|i|n|e|t|t|e|" >> TRACE.txt
+echo "+-+-+-+-+-+-+-+-+-+-+\n" >> TRACE.txt
 
-./tools/check_all.sh >> TRACE_$1.log
+./tools/check_all.sh >> TRACE.txt
 
-result=`grep -c 'good!' TRACE_$1.log`
+result=`grep -c 'good!' TRACE.txt`
 let score=result*6
 #echo result : $score
 
-if grep -q ERROR TRACE_$1.log; then
+if grep -q ERROR TRACE.txt; then
     echo Error
+    open TRACE.txt
 else
     echo Bravo ! Votre score est maintenant de : $score
     echo  $result > result.txt

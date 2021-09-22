@@ -1,6 +1,3 @@
-#LEVEL 00
-#########
-
 aff_a -p
 aff_a
 check -t ====
@@ -91,8 +88,10 @@ check -t ====
 );
 ====
 
-#LEVEL 01
-#########
+
+
+
+
 
 first_word -p
 first_word
@@ -208,9 +207,8 @@ rev_print -p
 rev_print
 check -t ====
 %tests = (
-	"$program 'zaz'" => "zaz\n",
-	"$program 'dub0 a POIL'" => "LIOP a 0bud\n",
-	"$program 'abacadaba 42!'" => "abbacccaddddabba 42!\n",
+	"$program zaz" => "zaz\n",
+	"$program \"dub0 a POIL\"" => "LIOP a 0bud\n",
 	"$program" => "\n",
 );
 ====
@@ -219,10 +217,10 @@ rot_13 -p
 rot_13
 check -t ====
 %tests = (
-	"$program 'abc'" => "nop\n",
-	"$program 'My horse is Amazing.'" => "Zl ubefr vf Nznmvat.\n",
-	"$program 'AkjhZ zLKIJz , 23y '" => "NxwuM mYXVWm , 23l \n",
-	"$program ''" => "\n",
+	"$program \"abc\"" => "nop\n",
+	"$program \"My horse is Amazing.\"" => "Zl ubefr vf Nznmvat.\n",
+	"$program \"AkjhZ zLKIJz , 23y \"" => "NxwuM mYXVWm , 23l \n",
+	"$program \"\"" => "\n",
 	"$program" => "\n",
 );
 ====
@@ -231,10 +229,10 @@ rotone -p
 rotone
 check -t ====
 %tests = (
-	"$program 'abc'" => "bcd\n",
-	"$program 'Les stagiaires du staff ne sentent pas toujours tres bon.'" => "Mft tubhjbjsft ev tubgg of tfoufou qbt upvkpvst usft cpo.\n",
-	"$program 'AkjhZ zLKIJz , 23y '" => "BlkiA aMLJKa , 23z \n",
-	"$program ''" => "\n",
+	"$program \"abc\"" => "bcd\n",
+	"$program \"Les stagiaires du staff ne sentent pas toujours tres bon.\"" => "Mft tubhjbjsft ev tubgg of tfoufou qbt upvkpvst usft cpo.\n",
+	"$program \"AkjhZ zLKIJz , 23y \"" => "BlkiA aMLJKa , 23z \n",
+	"$program \"\"" => "\n",
 	"$program" => "\n",
 );
 ====
@@ -243,7 +241,7 @@ search_and_replace -p
 search_and_replace
 check -t ====
 %tests = (
-	"$program 'Papache est un sabre' 'a' 'o'" => "Popoche est un sobre\n",
+	"$program \"Papache est un sabre\" \"a\" \"o\"" => "Popoche est un sobre\n",
 	"$program \"zaz\" \"art\" \"zul\"" => "\n",
 	"$program \"zaz\" \"r\" \"u\"" => "zaz\n",
 );
@@ -253,7 +251,7 @@ ulstr -p
 ulstr
 check -t ====
 %tests = (
-	"$program 'L\'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte et auto-justification.'" => "l'EspRIT Ne PEuT PLuS PrOGrESsER S'iL STAgNE ET Si PErSiStENT vaNiTE ET AUTO-JUSTIFICATION.\n",
+	"$program \"L\'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte et auto-justification.\"" => "l'EspRIT Ne PEuT PLuS PrOGrESsER S'iL STAgNE ET Si PErSiStENT vaNiTE ET AUTO-JUSTIFICATION.\n",
 	"$program \"S'enTOuRer dE sECreT eSt uN sIGnE De mAnQuE De coNNaiSSanCe.  \"" => "s'ENtoUrER De SecREt EsT Un SigNe dE MaNqUe dE COnnAIssANcE.  \n",
 	"$program \"3:21 Ba  tOut  moUn ki Ka di KE m'en Ka fe fot\"" => "3:21 bA  ToUT  MOuN KI kA DI ke M'EN kA FE FOT\n",
 	"$program" => "\n",
