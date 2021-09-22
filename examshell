@@ -1,5 +1,4 @@
 #!/bin/sh
-
 #Start with exercice 00
 dir='source/00'
 
@@ -10,7 +9,15 @@ folder=`/bin/ls -d "$dir"/*/ | sort --random-sort | head -1`
 newfolder=$( echo "$folder" | cut -d '/' -f3-)
 
 #copy random folder
-cp -r $folder subjects/$newfolder
+cp -r $folder sujets/$newfolder
+
+echo "Le premier exercice est : $newfolder"
+echo "Il se trouve dans le dossier sujets"
+echo "Vous devez faire un dossier rendu"
+
+value=`cat progress.txt`
+let value=value+1
+echo "$value" > progress.txt
 
 #newfolder=$($folder | cut -d '/' -f3-)
 
@@ -19,14 +26,14 @@ cp -r $folder subjects/$newfolder
 
 
 #echo "The randomly-selected file is: $folder" && cut -d'/' -f3-
-echo "The first exercie is: $newfolder"
+
 
 #echo "$folder" | cut -d'/' -f3-
 
 #nbfolder = ls | wc -l
 #echo "nb $nbfolder as"
 
-count=$(find ./subjects -maxdepth 1 -type d|wc -l)
-let count=count-1
-echo $count
+#count=$(find ./sujets -maxdepth 1 -type d|wc -l)
+#let count=count-1
+#echo $count
 
