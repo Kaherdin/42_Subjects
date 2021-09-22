@@ -1,27 +1,27 @@
 #!/bin/sh
 
-#check progress
-progress=`cat progress.txt`
-exercice=`cat exercice.txt`
+#check result
+result=`cat result.txt`
+#exercice=`cat exercice.txt`
 
-if [[ $progress -ge 0 ]] && [[ $progress -le 2 ]]
+if [[ $result -ge 0 ]] && [[ $result -le 2 ]]
 then
     sh raclette-exam 00
-elif [[ $progress -ge 3 ]] && [[ $progress -le 5 ]]
+elif [[ $result -ge 3 ]] && [[ $result -le 5 ]]
 then
-    sh examplay 01
-elif [[ $progress -ge 6 ]] && [[ $progress -le 8 ]]
+    sh raclette-exam 01
+elif [[ $result -ge 6 ]] && [[ $result -le 8 ]]
 then
-    sh examplay 02
-elif [[ $progress -ge 9 ]] && [[ $progress -le 11 ]]
+    sh raclette-exam 02
+elif [[ $result -ge 9 ]] && [[ $result -le 11 ]]
 then
-    sh examplay 03
-elif [[ $progress -ge 12 ]] && [[ $progress -le 14 ]]
+    sh raclette-exam 03
+elif [[ $result -ge 12 ]] && [[ $result -le 14 ]]
 then
-    sh examplay 04
-elif [[ $progress -ge 15 ]] && [[ $progress -le 17 ]]
+    sh raclette-exam 04
+elif [[ $result -ge 15 ]] && [[ $result -le 17 ]]
 then
-    sh examplay 05
+    sh raclette-exam 05
 fi
 
 
