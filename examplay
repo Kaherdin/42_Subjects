@@ -1,6 +1,16 @@
 #!/bin/sh
 #Start with exercice 00
-dir='source/00'
+if [ -z ${1+x} ]
+    then dir="source/00"
+    else dir="source/$1"
+fi
+
+#create empty directory for render
+mkdir sujets
+mkdir rendu
+
+#store progress
+echo "0" > progress.txt
 
 #Choose a random folder in 00
 folder=`/bin/ls -d "$dir"/*/ | sort --random-sort | head -1` 
@@ -11,24 +21,14 @@ newfolder=$( echo "$folder" | cut -d '/' -f3-)
 #copy random folder
 cp -r $folder sujets/$newfolder
 
-echo "Le premier exercice est : $newfolder"
-echo "Il se trouve dans le dossier sujets"
-echo "Vous devez faire un dossier rendu"
+echo "Votre premier exercice est : $newfolder"
+#echo "Il se trouve dans le dossier sujets"
+#echo "Vous devez faire un dossier rendu"
 
-value=`cat progress.txt`
-let value=value+1
-echo "$value" > progress.txt
+#value=`cat progress.txt`
+#let value=value+1
+#echo "$value" > progress.txt
 
-#newfolder=$($folder | cut -d '/' -f3-)
-
-
-
-
-
-#echo "The randomly-selected file is: $folder" && cut -d'/' -f3-
-
-
-#echo "$folder" | cut -d'/' -f3-
 
 #nbfolder = ls | wc -l
 #echo "nb $nbfolder as"

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+#check progress
+value=`cat progress.txt`
+
+if [[ $value -ge 0 ]] && [[ $value -le 2 ]]
+then
+    echo "00"
+elif [[ $value -ge 3 ]] && [[ $value -le 5 ]]
+then
+    sh examplay 01
+elif [[ $value -ge 6 ]] && [[ $value -le 8 ]]
+then
+    echo "02"
+elif [[ $value -ge 9 ]] && [[ $value -le 11 ]]
+then
+    echo "03"
+elif [[ $value -ge 12 ]] && [[ $value -le 14 ]]
+then
+    echo "04"
+elif [[ $value -ge 15 ]] && [[ $value -le 17 ]]
+then
+    echo "05"
+fi
+
+
+
+#let value=value+1
+#echo "$value" > progress.txt
+
