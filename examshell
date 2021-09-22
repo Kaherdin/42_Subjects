@@ -3,4 +3,11 @@ dir='source/00'
 folder=`/bin/ls -d "$dir"/*/ | sort --random-sort | head -1`
 echo "The randomly-selected file is: $folder";
 
+#nbfolder = ls | wc -l
+#echo "nb $nbfolder as"
+
+count=$(find ./subjects -maxdepth 1 -type d|wc -l)
+let count=count-1
+echo $count
+
 cp -r $folder subjects/00
