@@ -1,0 +1,30 @@
+#!/bin/sh
+
+echo "Eval in progress"
+#exercice=`cat exercice.txt`
+
+./spawn.pl rendu "config/exam/$1.pl"
+echo "folder is : rendu/$1"
+#clear
+./tools/build.sh
+#clear
+
+echo "\n\n$(date) : \n" >> RESULT_C$1.txt
+echo "+-+-+-+-+-+-+-+-+-+-+" >> RESULT_C$1.txt
+echo "|N|o|r|m|i|n|e|t|t|e|" >> RESULT_C$1.txt
+echo "+-+-+-+-+-+-+-+-+-+-+\n" >> RESULT_C$1.txt
+
+./tools/verify.sh >> RESULT_C$1.txt
+
+echo "\n+-+-+-+-+-+-+-+-+-+-+" >> RESULT_C$1.txt
+echo "|M|o|u|l|i|n|e|t|t|e|" >> RESULT_C$1.txt
+echo "+-+-+-+-+-+-+-+-+-+-+\n" >> RESULT_C$1.txt
+
+./tools/check_all.sh >> RESULT_C$1.txt
+
+rm -rf tools/ user_c$1/ work/
+
+#cp RESULT_C$1.txt ~/Desktop
+
+echo "The results can be found in RESULT_C$1.txt"
+open ./RESULT_C$1.txt

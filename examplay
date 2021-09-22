@@ -1,13 +1,16 @@
 #!/bin/sh
 #Start with exercice 00
 if [ -z ${1+x} ]
-    then dir="source/00"
-    else dir="source/$1"
+then 
+    dir="source/00"
+    mkdir sujets
+    mkdir rendu 
+else 
+    dir="source/$1"
 fi
 
 #create empty directory for render
-mkdir sujets
-mkdir rendu
+
 
 #store progress
 echo "0" > progress.txt
@@ -21,7 +24,8 @@ newfolder=$( echo "$folder" | cut -d '/' -f3-)
 #copy random folder
 cp -r $folder sujets/$newfolder
 
-echo "Votre premier exercice est : $newfolder"
+echo "Votre exercice est : $newfolder"
+echo $newfolder > exercice.txt
 #echo "Il se trouve dans le dossier sujets"
 #echo "Vous devez faire un dossier rendu"
 

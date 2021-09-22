@@ -1,19 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maff_alpha.c                                       :+:      :+:    :+:   */
+/*   aff_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparmar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aborst <aborst@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/10 04:09:08 by maparmar          #+#    #+#             */
-/*   Updated: 2019/03/10 04:09:11 by maparmar         ###   ########.fr       */
+/*   Created: 2019/03/10 04:18:32 by maparmar          #+#    #+#             */
+/*   Updated: 2021/09/22 21:01:19 by aborst           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(void)
+int		main(int ac, char **av)
 {
-	write(1, "aBcDeFgHiJkLmNoPqRsTuVwXyZ\n", 27);
+	int		i;
+
+	i = 0;
+	if (ac != 2)
+		write(1, "a\n", 2);
+	else
+	{
+		while (av[1][i])
+		{
+			if (av[1][i] != 'a')
+				i++;
+			else
+			{
+				write(1, "a", 1);
+				break;
+			}
+		}
+		write(1, "\n", 1);
+	}
 	return (0);
 }
