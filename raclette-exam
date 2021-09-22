@@ -1,10 +1,11 @@
 #!/bin/sh
+progress=`cat progress.txt`
 
 echo "Eval in progress"
 #exercice=`cat exercice.txt`
 
 ./spawn.pl rendu "config/exam/00.pl"
-echo "folder is : rendu/$1"
+echo "level is : $1"
 #clear
 ./tools/build.sh
 #clear
@@ -26,6 +27,8 @@ if grep -q ERROR TRACE_$1.log; then
     echo Error
 else
     echo Good
+    let progress=progress+1
+    echo "$progress" > progress.txt
 fi
 
 rm -rf tools/ work/

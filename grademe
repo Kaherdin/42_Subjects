@@ -1,33 +1,29 @@
 #!/bin/sh
 
 #check progress
-value=`cat progress.txt`
+progress=`cat progress.txt`
 exercice=`cat exercice.txt`
 
-if [[ $value -ge 0 ]] && [[ $value -le 2 ]]
+if [[ $progress -ge 0 ]] && [[ $progress -le 2 ]]
 then
-    echo $exercice;
-    sh raclette-exam $exercice
-    #sh examplay 00
-elif [[ $value -ge 3 ]] && [[ $value -le 5 ]]
+    sh raclette-exam 00
+elif [[ $progress -ge 3 ]] && [[ $progress -le 5 ]]
 then
     sh examplay 01
-elif [[ $value -ge 6 ]] && [[ $value -le 8 ]]
+elif [[ $progress -ge 6 ]] && [[ $progress -le 8 ]]
 then
     sh examplay 02
-elif [[ $value -ge 9 ]] && [[ $value -le 11 ]]
+elif [[ $progress -ge 9 ]] && [[ $progress -le 11 ]]
 then
     sh examplay 03
-elif [[ $value -ge 12 ]] && [[ $value -le 14 ]]
+elif [[ $progress -ge 12 ]] && [[ $progress -le 14 ]]
 then
     sh examplay 04
-elif [[ $value -ge 15 ]] && [[ $value -le 17 ]]
+elif [[ $progress -ge 15 ]] && [[ $progress -le 17 ]]
 then
     sh examplay 05
 fi
 
 
 
-#let value=value+1
-#echo "$value" > progress.txt
 
