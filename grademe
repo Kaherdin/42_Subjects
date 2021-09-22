@@ -2,7 +2,6 @@
 
 #check result
 result=`cat result.txt`
-#exercice=`cat exercice.txt`
 
 if [[ $result -ge 0 ]] && [[ $result -le 2 ]]
 then

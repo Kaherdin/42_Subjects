@@ -1,5 +1,5 @@
 #!/bin/sh
-score=`cat score.txt`
+
 #Start with exercice 00
 if [ -z ${1+x} ]
 then 
@@ -11,8 +11,6 @@ else
     dir="source/$1"
 fi
 
-#store progress
-#echo "0" > score.txt
 
 #Choose a random folder in 00
 folder=`/bin/ls -d "$dir"/*/ | sort --random-sort | head -1` 
@@ -25,23 +23,4 @@ cp -r $folder sujets/$newfolder
 
 echo "Votre prochain exercice est : $newfolder"
 
-#echo $newfolder > exercice.txt
-
-
-
-
-#echo "Il se trouve dans le dossier sujets"
-#echo "Vous devez faire un dossier rendu"
-
-#value=`cat progress.txt`
-#let value=value+1
-#echo "$value" > progress.txt
-
-
-#nbfolder = ls | wc -l
-#echo "nb $nbfolder as"
-
-#count=$(find ./sujets -maxdepth 1 -type d|wc -l)
-#let count=count-1
-#echo $count
 
