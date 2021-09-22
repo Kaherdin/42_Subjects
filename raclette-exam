@@ -1,5 +1,5 @@
 #!/bin/sh
-./spawn.pl rendu "config/exam/00.pl"
+./spawn.pl rendu "config/exam/all.pl"
 
 clear
 ./tools/build.sh
