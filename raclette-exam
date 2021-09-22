@@ -3,7 +3,7 @@
 echo "Eval in progress"
 #exercice=`cat exercice.txt`
 
-./spawn.pl rendu "config/exam/$1.pl"
+./spawn.pl rendu "config/exam/00.pl"
 echo "folder is : rendu/$1"
 #clear
 ./tools/build.sh
