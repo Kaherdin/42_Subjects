@@ -23,11 +23,14 @@ echo "+-+-+-+-+-+-+-+-+-+-+\n" >> TRACE_$1.log
 
 ./tools/check_all.sh >> TRACE_$1.log
 
+result=`grep -c 'good!' TRACE_$1.log` 
+
 if grep -q ERROR TRACE_$1.log; then
     echo Error
 else
     echo Good
     let progress=progress+1
+    echo  $result > result.txt
     echo "$progress" > progress.txt
 fi
 
